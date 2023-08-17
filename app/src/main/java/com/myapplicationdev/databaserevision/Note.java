@@ -39,6 +39,4 @@ public class Note {
         return id + ". " + content + " " + priority;
     }
 
-    //TODO: What should be here?
-
 }
