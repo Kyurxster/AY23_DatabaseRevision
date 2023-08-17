@@ -48,6 +48,7 @@ public class DBHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(COLUMN_CONTENT, content);
         values.put(COLUMN_PRIORITY, priority);
+        db.insert(TABLE_NOTE, null, values);
     }
 
     public ArrayList<String> getNotesInStrings() {
