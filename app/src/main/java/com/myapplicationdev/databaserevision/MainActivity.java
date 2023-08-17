@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnInsertRecord, btnRetrieveRecords;
+    Button btnInsertRecord, btnRetrieveRecordsTV,btnRetrieveRecordsLV;
     ArrayList<Note> noteArrayList;
     ArrayAdapter<Note> noteArrayAdapter;
 
@@ -23,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnInsertRecord = findViewById(R.id.btnInsertRecord);
-        btnRetrieveRecords = findViewById(R.id.btnGetRecord);
+        btnRetrieveRecordsTV = findViewById(R.id.btnGetRecordTextView);
+        btnRetrieveRecordsLV = findViewById(R.id.btnGetRecordListView);
 
         DBHelper db = new DBHelper(MainActivity.this);
         noteArrayList =new ArrayList<Note>();
@@ -42,7 +43,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnRetrieveRecords.setOnClickListener(new View.OnClickListener(){
+        btnRetrieveRecordsTV.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+
+                Intent i = new Intent(MainActivity.this,
+                        RetrieveActivityListView.class);
+                startActivity(i);
+
+            }
+        });
+
+        btnRetrieveRecordsLV.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
 
