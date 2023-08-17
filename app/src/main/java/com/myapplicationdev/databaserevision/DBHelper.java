@@ -50,7 +50,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(COLUMN_PRIORITY, priority);
         db.insert(TABLE_NOTE, null, values);
         db.close();
-        Log.i( "InsertActivity.this", "Inserted new task Content: " + content + ", Priority: " + priority);
+        Log.i( "InsertActivity.java", "Inserted new task Content: " + content + ", Priority: " + priority);
     }
 
     public ArrayList<String> getNotesInStrings() {
@@ -97,6 +97,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
             } while (cursor.moveToNext());
         }
+        Log.i("RetrieveActivityListView.java", "Returned notes objects");
 
         cursor.close();
         db.close();
