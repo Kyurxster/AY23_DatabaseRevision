@@ -102,7 +102,31 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     //Edit?
+    public int updateTask(Note data){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_ID, data.getId());
+        values.put(COLUMN_CONTENT, data.getContent());
+        values.put(COLUMN_PRIORITY, data.getPriority());
+        String condition = COLUMN_ID + "= ?";
+        String[] args = {String.valueOf(data.getId())};
+        int result= db.update(TABLE_NOTE, values, condition, args);
+        db.close();
+
+        return result;
+    }
+
     //Delete?
+    public int deleteTask(int id){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String condition =COLUMN_ID + "= ?";
+        String[] args = {String.valueOf(id)};
+        int result = db.delete(TABLE_NOTE, condition, args);
+
+        return result;
+    }
 
 }
 
