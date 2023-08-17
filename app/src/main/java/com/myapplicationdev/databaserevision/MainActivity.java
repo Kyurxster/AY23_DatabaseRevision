@@ -33,11 +33,9 @@ public class MainActivity extends AppCompatActivity {
         btnInsertRecord.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Note target = noteArrayList.get(0);
 
                 Intent i = new Intent(MainActivity.this,
                         InsertActivity.class);
-                i.putExtra("data", target);
                 startActivity(i);
 
 
@@ -48,11 +46,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Note target = noteArrayList.get(0);
-
                 Intent i = new Intent(MainActivity.this,
                         RetrieveActivityListView.class);
-                i.putExtra("data", target);
                 startActivity(i);
 
             }

@@ -49,6 +49,8 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(COLUMN_CONTENT, content);
         values.put(COLUMN_PRIORITY, priority);
         db.insert(TABLE_NOTE, null, values);
+        db.close();
+        Log.i( "InsertActivity.this", "Inserted new task Content: " + content + ", Priority: " + priority);
     }
 
     public ArrayList<String> getNotesInStrings() {
